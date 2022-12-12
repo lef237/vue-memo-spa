@@ -16,7 +16,7 @@ const counter = useCounterStore();
     />
 
     <div class="wrapper">
-      <HelloWorld msg="You did it!" />
+      <HelloWorld msg="Vueのメモアプリ" />
 
       <div>
         Count:{{ counter.count }}
@@ -24,7 +24,9 @@ const counter = useCounterStore();
       </div>
 
       <nav>
-        <RouterLink to="/">Home</RouterLink>
+        <RouterLink to="/">メモ一覧</RouterLink>
+        <RouterLink to="/new">＋</RouterLink>
+        <RouterLink to="/home">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
       </nav>
     </div>
