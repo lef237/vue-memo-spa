@@ -3,7 +3,7 @@ import { defineStore } from "pinia";
 
 export const useMemosStore = defineStore("memos", {
   state: () => ({
-    memos: [],
+    memos: ["aaa\nbbb", "ccc\nddd", "eee\nfff"],
     // 後で下をコメントアウトする
     // memos: useLocalStorage("memos", []),
   }),

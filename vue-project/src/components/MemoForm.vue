@@ -1,10 +1,30 @@
-<script setup>
+<script>
+import { mapState } from "pinia";
 import { useMemosStore } from "@/stores/memos";
-const memosStore = useMemosStore();
-let memo = {
-  title: "メモのタイトルです",
-  content: "メモの内容です",
+export default {
+  computed: {
+    ...mapState(useMemosStore, {
+      memosArray: "memos",
+      memosLength: (store) => store.memos.length,
+    }),
+  },
 };
+
+
+// ここから追記エリア
+
+
+
+// const memosStore = useMemosStore();
+// let memo = {
+//   title: "メモのタイトルです",
+//   content: "メモの内容です",
+// };
+
+
+
+
+
 </script>
 
 <template>
@@ -12,6 +32,10 @@ let memo = {
   <div><textarea></textarea></div>
   <div class="center">
     <button @click="memosStore.saveMemos(memo)">保存</button>
+  </div>
+  <div>
+    <span>{{ memosArray }}</span>
+    <span>{{ memosLength }}</span>
   </div>
 </template>
 
