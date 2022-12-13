@@ -1,4 +1,28 @@
-<script></script>
+<script>
+export default {
+  data() {
+    return {
+      content: "",
+      // title: this.content.split("\n")[0],
+      memos: [],
+    };
+  },
+  mounted() {
+    this.memos = JSON.parse(localStorage.getItem("memos") || "[]");
+  },
+  methods: {
+    save() {
+      let memo = {
+        title: this.content.split("\n")[0],
+        content: this.content,
+      };
+      this.memos.push(memo);
+      localStorage.setItem("memos", JSON.stringify(this.memos));
+      this.$router.push("/");
+    },
+  },
+};
+</script>
 
 <template>
   <!-- <div><input type="text"></div> -->
@@ -7,7 +31,8 @@
     <button @click="save()">保存</button>
   </div>
   <div>
-    <span>{{ memos }}</span>
+    <span>{{ content }}</span>
+    <span>{{ title }}</span>
   </div>
 </template>
 

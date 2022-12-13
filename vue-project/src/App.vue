@@ -1,6 +1,5 @@
 <script setup>
 import { RouterLink, RouterView } from "vue-router";
-import HelloWorld from "./components/HelloWorld.vue";
 </script>
 
 <template>
@@ -9,18 +8,17 @@ import HelloWorld from "./components/HelloWorld.vue";
       alt="Vue logo"
       class="logo"
       src="@/assets/logo.svg"
-      width="125"
-      height="125"
+      width="50"
+      height="50"
     />
 
     <div class="wrapper">
-      <HelloWorld msg="Vueのメモアプリ" />
-
+      <h1>Vueのメモアプリ</h1>
       <nav>
         <RouterLink to="/">メモ一覧</RouterLink>
         <RouterLink to="/new">＋</RouterLink>
-        <RouterLink to="/home">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
+        <!-- <RouterLink to="/home">Home</RouterLink> -->
+        <!-- <RouterLink to="/about">About</RouterLink> -->
       </nav>
     </div>
   </header>
