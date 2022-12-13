@@ -1,41 +1,13 @@
-<script>
-import { mapState } from "pinia";
-import { useMemosStore } from "@/stores/memos";
-export default {
-  computed: {
-    ...mapState(useMemosStore, {
-      memosArray: "memos",
-      memosLength: (store) => store.memos.length,
-    }),
-  },
-};
-
-
-// ここから追記エリア
-
-
-
-// const memosStore = useMemosStore();
-// let memo = {
-//   title: "メモのタイトルです",
-//   content: "メモの内容です",
-// };
-
-
-
-
-
-</script>
+<script></script>
 
 <template>
   <!-- <div><input type="text"></div> -->
-  <div><textarea></textarea></div>
+  <div><textarea v-model="content"></textarea></div>
   <div class="center">
-    <button @click="memosStore.saveMemos(memo)">保存</button>
+    <button @click="save()">保存</button>
   </div>
   <div>
-    <span>{{ memosArray }}</span>
-    <span>{{ memosLength }}</span>
+    <span>{{ memos }}</span>
   </div>
 </template>
 
