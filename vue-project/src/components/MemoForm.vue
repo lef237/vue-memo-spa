@@ -1,11 +1,17 @@
 <script setup>
+import { useMemosStore } from "@/stores/memos";
+const memosStore = useMemosStore();
+let memo = {
+  title: "メモのタイトルです",
+  content: "メモの内容です",
+};
 </script>
 
 <template>
   <!-- <div><input type="text"></div> -->
   <div><textarea></textarea></div>
   <div class="center">
-    <button>保存</button>
+    <button @click="memosStore.saveMemos(memo)">保存</button>
   </div>
 </template>
 
