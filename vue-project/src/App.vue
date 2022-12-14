@@ -17,8 +17,6 @@ import { RouterLink, RouterView } from "vue-router";
       <nav>
         <RouterLink to="/">メモ一覧</RouterLink>
         <RouterLink to="/new">メモ追加</RouterLink>
-        <!-- <RouterLink to="/home">Home</RouterLink> -->
-        <!-- <RouterLink to="/about">About</RouterLink> -->
       </nav>
     </div>
   </header>

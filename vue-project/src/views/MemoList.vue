@@ -26,11 +26,9 @@ export default {
         <router-link :to="{ name: 'edit', params: { id: index } }">{{
           memo.title
         }}</router-link>
-        <!-- {{ memo.title }} -->
       </li>
     </ul>
     <p v-else>メモはありません</p>
-    <!-- メモの件数を表示 -->
     <p>今のメモの登録数は{{ hasMemos }}つです</p>
   </div>
 </template>
