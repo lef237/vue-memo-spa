@@ -59,10 +59,12 @@ div {
   margin-bottom: 10px;
   text-align: center;
 }
+
 textarea {
   width: 50%;
   height: 10em;
 }
+
 button {
   width: 5em;
   margin: 3px;
