@@ -21,6 +21,9 @@ export default {
       // console.log(this.memos[id]);
       return this.memos[id];
     },
+    id() {
+      return parseInt(this.$route.params.id);
+    },
   },
 };
 </script>
@@ -29,7 +32,8 @@ export default {
   <!-- Edit View: {{ $route.params.id }} -->
   <!-- <p>{{ memo }}</p> -->
   <p>{{ memo.content }}</p>
+  <p>{{ id }}</p>
 
   <!-- 後でここにidも追加してformで受け取れるようにする -->
-  <MemoForm :memo="memo" />
+  <MemoForm :memo="memo" :id="id" />
 </template>

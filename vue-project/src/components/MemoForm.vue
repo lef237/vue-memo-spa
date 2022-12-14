@@ -1,12 +1,17 @@
 <script>
 export default {
   name: "MemoForm",
-  props: ["memo"],
+  props: {
+    memo: { type: String, default: "" },
+    id: { default: false },
+  },
+  // ["memo"],
   data() {
     return {
       content: this.memo.content,
       // title: this.content.split("\n")[0],
       memos: [],
+      memoIndex: this.id,
     };
   },
   mounted() {
@@ -29,13 +34,18 @@ export default {
 <template>
   <!-- <div><input type="text"></div> -->
   <div><textarea v-model="content"></textarea></div>
-  <div class="center">
+  <div v-if="Number.isInteger(memoIndex)">
+    編集と削除
+  </div>
+  <div v-else class="center">
     <button @click="save()">保存</button>
   </div>
   <div>
     <span>{{ content }}</span>
     <!-- <span>{{ title }}</span> -->
   </div>
+  <div v-if="Number.isInteger(memoIndex)">{{ memoIndex }}</div>
+  <div v-else>新規メモ</div>
 </template>
 
 <style scoped>

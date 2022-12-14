@@ -2,7 +2,7 @@
 import MemoForm from "@/components/MemoForm.vue";
 </script>
 
-<script>
+<!-- <script>
 export default {
   data() {
     return {
@@ -10,8 +10,8 @@ export default {
     };
   },
 };
-</script>
+</script> -->
 
 <template>
-  <MemoForm :memo="memo" />
+  <MemoForm />
 </template>
