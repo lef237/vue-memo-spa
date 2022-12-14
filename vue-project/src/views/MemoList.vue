@@ -22,8 +22,11 @@ export default {
   </div>
   <div class="list">
     <ul v-if="hasMemos">
-      <li v-for="memo in memos" :key="memo.title">
-        {{ memo.title }}
+      <li v-for="(memo, index) in memos" :key="memo.title">
+        <router-link :to="{ name: 'edit', params: { id: index } }">{{
+          memo.title
+        }}</router-link>
+        <!-- {{ memo.title }} -->
       </li>
     </ul>
     <p v-else>メモはありません</p>

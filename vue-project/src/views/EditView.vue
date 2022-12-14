@@ -24,5 +24,5 @@ export default {
 <template>
   <!-- Edit View: {{ $route.params.id }} -->
   <!-- <p>{{ memo }}</p> -->
-  <p>{{ memo.title }}</p>
+  <p>{{ memo.content }}</p>
 </template>
