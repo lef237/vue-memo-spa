@@ -16,7 +16,7 @@ import { RouterLink, RouterView } from "vue-router";
       <h1>Vueのメモアプリ</h1>
       <nav>
         <RouterLink to="/">メモ一覧</RouterLink>
-        <RouterLink to="/new">＋</RouterLink>
+        <RouterLink to="/new">メモ追加</RouterLink>
         <!-- <RouterLink to="/home">Home</RouterLink> -->
         <!-- <RouterLink to="/about">About</RouterLink> -->
       </nav>
@@ -34,14 +34,14 @@ header {
 
 .logo {
   display: block;
-  margin: 0 auto 2rem;
+  margin: 0 auto 1rem;
 }
 
 nav {
   width: 100%;
-  font-size: 12px;
+  font-size: 14px;
   text-align: center;
-  margin-top: 2rem;
+  margin-top: 1rem;
 }
 
 nav a.router-link-exact-active {
