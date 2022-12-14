@@ -18,7 +18,7 @@ export default {
 
 <template>
   <div class="list">
-    <h1>This is memoList page</h1>
+    <h1>メモ一覧ページです</h1>
   </div>
   <div class="list">
     <ul v-if="hasMemos">
@@ -47,8 +47,8 @@ li {
 }
 
 li a {
-  color: #999;
-  text-decoration: none;
+  color: rgb(79, 66, 250);
+  text-decoration: underline;
   width: 100%;
   display: block;
 }
