@@ -1,3 +1,7 @@
+<script setup>
+import MemoForm from "@/components/MemoForm.vue";
+</script>
+
 <script>
 export default {
   data() {
@@ -25,4 +29,7 @@ export default {
   <!-- Edit View: {{ $route.params.id }} -->
   <!-- <p>{{ memo }}</p> -->
   <p>{{ memo.content }}</p>
+
+  <!-- 後でここにidも追加してformで受け取れるようにする -->
+  <MemoForm :memo="memo" />
 </template>

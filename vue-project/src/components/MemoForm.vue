@@ -1,8 +1,10 @@
 <script>
 export default {
+  name: "MemoForm",
+  props: ["memo"],
   data() {
     return {
-      content: "",
+      content: this.memo.content,
       // title: this.content.split("\n")[0],
       memos: [],
     };
@@ -32,7 +34,7 @@ export default {
   </div>
   <div>
     <span>{{ content }}</span>
-    <span>{{ title }}</span>
+    <!-- <span>{{ title }}</span> -->
   </div>
 </template>
 
