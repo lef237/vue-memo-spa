@@ -29,19 +29,19 @@ export default {
       this.$router.push("/");
     },
     updateMemo() {
-      // uuidとspliceを使ってメモを書き換える
       let memo = {
         title: this.content.split("\n")[0],
         content: this.content,
         id: this.memoID,
       };
-      this.memos[this.memoIndex] = memo;
+      const updateIndex = this.memos.findIndex(({ id }) => id === this.id);
+      this.memos[updateIndex] = memo;
       localStorage.setItem("memos", JSON.stringify(this.memos));
       this.$router.push("/");
     },
     deleteMemo() {
-      //uuidを使ってメモを削除する
-      this.memos.splice(this.memoIndex, 1);
+      const deleteIndex = this.memos.findIndex(({ id }) => id === this.id);
+      this.memos.splice(deleteIndex, 1);
       localStorage.setItem("memos", JSON.stringify(this.memos));
       this.$router.push("/");
     },
