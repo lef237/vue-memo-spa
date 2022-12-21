@@ -24,8 +24,8 @@ export default {
   </div>
   <div class="list">
     <ul v-if="hasMemos">
-      <li v-for="(memo, index) in memos" :key="memo.title">
-        <router-link :to="{ name: 'edit', params: { id: index } }">{{
+      <li v-for="memo in memos" :key="memo.id">
+        <router-link :to="{ name: 'edit', params: { id: memo.id } }">{{
           memo.title
         }}</router-link>
       </li>

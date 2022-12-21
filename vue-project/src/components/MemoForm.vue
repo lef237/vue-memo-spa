@@ -1,5 +1,6 @@
 <script>
 import memoData from "@/memoData";
+import { v4 as uuidv4 } from "uuid";
 
 export default {
   props: {
@@ -10,7 +11,7 @@ export default {
     return {
       memos: [],
       content: this.memo.content,
-      memoIndex: this.id,
+      memoID: this.id,
     };
   },
   mounted() {
@@ -21,21 +22,25 @@ export default {
       let memo = {
         title: this.content.split("\n")[0],
         content: this.content,
+        id: uuidv4(),
       };
       this.memos.push(memo);
       localStorage.setItem("memos", JSON.stringify(this.memos));
       this.$router.push("/");
     },
     updateMemo() {
+      // uuidとspliceを使ってメモを書き換える
       let memo = {
         title: this.content.split("\n")[0],
         content: this.content,
+        id: this.memoID,
       };
       this.memos[this.memoIndex] = memo;
       localStorage.setItem("memos", JSON.stringify(this.memos));
       this.$router.push("/");
     },
     deleteMemo() {
+      //uuidを使ってメモを削除する
       this.memos.splice(this.memoIndex, 1);
       localStorage.setItem("memos", JSON.stringify(this.memos));
       this.$router.push("/");
@@ -46,7 +51,7 @@ export default {
 
 <template>
   <div><textarea v-model="content"></textarea></div>
-  <div v-if="Number.isInteger(memoIndex)">
+  <div v-if="memoID !== false">
     <button @click="updateMemo()">編集</button>
     <button @click="deleteMemo()">削除</button>
   </div>

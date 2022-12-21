@@ -16,11 +16,12 @@ export default {
   },
   computed: {
     memo() {
-      let id = parseInt(this.$route.params.id);
-      return this.memos[id];
+      let id = this.$route.params.id;
+      const targetMemo = this.memos.find((memo) => memo.id === id);
+      return targetMemo;
     },
     id() {
-      return parseInt(this.$route.params.id);
+      return this.$route.params.id;
     },
   },
 };
