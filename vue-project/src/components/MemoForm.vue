@@ -1,4 +1,6 @@
 <script>
+import memoData from "@/memoData";
+
 export default {
   props: {
     memo: { type: String, default: "" },
@@ -12,7 +14,7 @@ export default {
     };
   },
   mounted() {
-    this.memos = JSON.parse(localStorage.getItem("memos") || "[]");
+    this.memos = memoData.loadMemos();
   },
   methods: {
     save() {

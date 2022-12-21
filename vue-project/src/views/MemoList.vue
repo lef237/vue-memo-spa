@@ -1,4 +1,6 @@
 <script>
+import memoData from "@/memoData";
+
 export default {
   data() {
     return {
@@ -6,7 +8,7 @@ export default {
     };
   },
   mounted() {
-    this.memos = JSON.parse(localStorage.getItem("memos") || "[]");
+    this.memos = memoData.loadMemos();
   },
   computed: {
     hasMemos() {

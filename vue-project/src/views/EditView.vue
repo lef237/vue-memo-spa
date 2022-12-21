@@ -3,6 +3,8 @@ import MemoForm from "@/components/MemoForm.vue";
 </script>
 
 <script>
+import memoData from "@/memoData";
+
 export default {
   data() {
     return {
@@ -10,7 +12,7 @@ export default {
     };
   },
   created() {
-    this.memos = JSON.parse(localStorage.getItem("memos") || "[]");
+    this.memos = memoData.loadMemos();
   },
   computed: {
     memo() {
