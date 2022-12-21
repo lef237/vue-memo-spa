@@ -25,7 +25,7 @@ export default {
         id: uuidv4(),
       };
       this.memos.push(memo);
-      localStorage.setItem("memos", JSON.stringify(this.memos));
+      memoData.saveMemos(this.memos);
       this.$router.push("/");
     },
     updateMemo() {
@@ -36,13 +36,13 @@ export default {
       };
       const updateIndex = this.memos.findIndex(({ id }) => id === this.id);
       this.memos[updateIndex] = memo;
-      localStorage.setItem("memos", JSON.stringify(this.memos));
+      memoData.saveMemos(this.memos);
       this.$router.push("/");
     },
     deleteMemo() {
       const deleteIndex = this.memos.findIndex(({ id }) => id === this.id);
       this.memos.splice(deleteIndex, 1);
-      localStorage.setItem("memos", JSON.stringify(this.memos));
+      memoData.saveMemos(this.memos);
       this.$router.push("/");
     },
   },
